@@ -24,7 +24,7 @@ jobs:
 
     - name: Upload files to SFTP server
       run: |
-        lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} sftp://${{ secrets.FTP_SERVER }}:22 -e "
-          mirror -R ./ /
+        lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} sftp://${{ secrets.FTP_SERVER }}:22 -e "
+          mirror -R ./src /
           quit
         "
