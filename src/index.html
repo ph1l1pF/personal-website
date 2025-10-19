@@ -1,349 +1,291 @@
 <!DOCTYPE html>
-<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
-
-   <!--- Basic Page Needs
-   ================================================== -->
    <meta charset="utf-8">
-	<title>Philip Frerk - Software Engineer</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+   <title>Philip Frerk - Software Engineer</title>
+   <meta name="description" content="Freelance Software Engineer specializing in .NET, Cloud Technologies, and DevOps">
+   <meta name="author" content="Philip Frerk">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 
-   <!-- Mobile Specific Metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <!-- CSS -->
+   <link rel="stylesheet" href="css/modern.css">
+   <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
-	<!-- CSS
-    ================================================== -->
-   <link rel="stylesheet" href="css/default.css">
-	<link rel="stylesheet" href="css/layout.css">
-   <link rel="stylesheet" href="css/media-queries.css">
-   <link rel="stylesheet" href="css/magnific-popup.css">
-
-   <!-- Script
-   ================================================== -->
-	<script src="js/modernizr.js"></script>
-
-   <!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="favicon.png" >
-
+   <!-- Favicons -->
+   <link rel="shortcut icon" href="favicon.png">
 </head>
 
 <body>
-
-   <!-- Header
-   ================================================== -->
-   <header id="home">
-
-      <nav id="nav-wrap">
-
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-
-         <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-            <li><a class="smoothscroll" href="#about">About</a></li>
-	         <li><a class="smoothscroll" href="#resume">Vita</a></li>
-            <li><a class="smoothscroll" href="#contact">Contact</a></li>
-         </ul> <!-- end #nav -->
-
-      </nav> <!-- end #nav-wrap -->
-
-      <div class="row banner">
-         <div class="banner-text">
-            <h1 class="responsive-headline">Philip Frerk</h1>
-            <h3>I'm a Freelance Software Engineer. <a class="smoothscroll" href="#about">Scroll down</a>
-            to find out more.</h3>
-            <hr />
-            <ul class="social">
-               <li><a href="https://www.github.com/ph1l1pf" target="_blank"><i class="fa fa-github"></i></a></li>
-               <li><a href="https://www.linkedin.com/in/philip-frerk-6a3128152/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-               <li>
-                  <a href="https://www.freelancermap.de/profil/philip-frerk" target="_blank" title="Profil von Philip Frerk auf www.freelancermap.de">
-                  <img loading="lazy" style="width:108px; height:24px" src="https://www.freelancermap.de/images/widgets/dashboard/fm-profile-badge-black.svg">
-                  </a>
-               </li>
-            </ul>
-         </div>
+   <!-- Navigation -->
+   <nav id="navbar">
+      <div class="nav-container">
+         <a href="#home" class="logo">PF</a>
+         <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+         </button>
+         <ul class="nav-menu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#resume" class="nav-link">Experience</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+         </ul>
       </div>
+   </nav>
 
-      <p class="scrolldown">
-         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
-      </p>
-
-   </header> <!-- Header End -->
-
-
-   <!-- About Section
-   ================================================== -->
-   <section id="about">
-
-      <div class="row">
-
-         <div class="three columns">
-
-            <img class="profile-pic"  src="images/profilepic.jpg" alt="" />
-
-         </div>
-
-         <div class="nine columns main-col">
-
-            <h2>Philip Frerk, M.Sc.</h2>
-
-            <p>
-               I am a passionate software developer with a focus on backend development, CI/CD, and cloud technologies. 
-               Early on, I taught myself programming and later deepened my knowledge during my computer science studies and 
-               as a software engineer. My focus is on clean code, solid software architecture, and sustainable, scalable solutions. 
-               In addition to development, I am enthusiastic about DevOps and Cloud technologies.
+   <!-- Hero Section -->
+   <section id="home" class="hero">
+      <div class="hero-content">
+         <div class="hero-text">
+            <h1 class="hero-title">
+               <span class="greeting">Hi, I'm</span>
+               <span class="name">Philip Frerk</span>
+            </h1>
+            <p class="hero-subtitle">Freelance Software Engineer</p>
+            <p class="hero-description">
+               Specializing in .NET, Cloud Technologies & DevOps
             </p>
-
-            <div class="row">
-
-               <div class="columns contact-details">
-
-                  <h2>Contact Details</h2>
-                  <p class="address">
-                     <span>philip[dot]frerk[at]gmail[dot]com</span>
-					   </p>
-
-               </div>
-
-            </div> <!-- end row -->
-
-         </div> <!-- end .main-col -->
-
-      </div>
-
-   </section> <!-- About Section End-->
-
-
-   <!-- Resume Section
-
-   ================================================== -->
-   <section id="resume">
-
-
-      <!-- Work
-      ----------------------------------------------- -->
-      <div class="row work">
-
-         <div class="three columns header-col">
-            <h1><span>Work</span></h1>
+            <div class="hero-cta">
+               <a href="#about" class="btn btn-primary">Learn More</a>
+               <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+            <div class="social-links">
+               <a href="https://www.github.com/ph1l1pf" target="_blank" aria-label="GitHub">
+                  <i class="fa fa-github"></i>
+               </a>
+               <a href="https://www.linkedin.com/in/philip-frerk-6a3128152/" target="_blank" aria-label="LinkedIn">
+                  <i class="fa fa-linkedin"></i>
+               </a>
+               <a href="https://www.freelancermap.de/profil/philip-frerk" target="_blank" aria-label="FreelancerMap">
+                  <img src="https://www.freelancermap.de/images/widgets/dashboard/fm-profile-badge-black.svg" alt="FreelancerMap Profile" style="width:108px; height:24px">
+               </a>
+            </div>
          </div>
+      </div>
+      <div class="scroll-indicator">
+         <a href="#about" aria-label="Scroll down">
+            <i class="fa fa-chevron-down"></i>
+         </a>
+      </div>
+   </section>
 
-         <div class="nine columns main-col">
+   <!-- About Section -->
+   <section id="about" class="section">
+      <div class="container">
+         <div class="about-content">
+            <div class="about-image">
+               <img src="images/profilepic.jpg" alt="Philip Frerk" class="profile-img">
+            </div>
+            <div class="about-text">
+               <h2 class="section-title">About Me</h2>
+               <h3 class="subtitle">Philip Frerk, M.Sc.</h3>
+               <p>
+                  I am a passionate software developer with a focus on backend development, CI/CD, and cloud technologies. 
+                  Early on, I taught myself programming and later deepened my knowledge during my computer science studies and 
+                  as a software engineer.
+               </p>
+               <p>
+                  My focus is on clean code, solid software architecture, and sustainable, scalable solutions. 
+                  In addition to development, I am enthusiastic about DevOps and Cloud technologies.
+               </p>
+               <div class="contact-info">
+                  <h4>Contact Details</h4>
+                  <p class="email">philip[dot]frerk[at]gmail[dot]com</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
 
-            <div class="row item">
-
-               <div class="twelve columns">
-                  <h3><a href="https://www.diamant-software.de" target="_blank">Freelancer</a></h3>
-                  <p class="info">Software Engineer<span>&bull;</span> <em class="date">Jan 2025 - now</em></p>
-                  I am a freelance software developer with a focus on .NET in combination with cloud-native technologies.
+   <!-- Resume Section -->
+   <section id="resume" class="section section-alt">
+      <div class="container">
+         <h2 class="section-title centered">Experience & Education</h2>
+         
+         <!-- Work Experience -->
+         <div class="resume-block">
+            <h3 class="block-title">Work Experience</h3>
+            
+            <div class="timeline-item">
+               <div class="timeline-marker"></div>
+               <div class="timeline-content">
+                  <span class="timeline-date">Jan 2025 - Present</span>
+                  <h4>Freelancer</h4>
+                  <p class="company">Software Engineer</p>
                   <p>
-                  <p>
-                     Download detailed profile <a href="assets/Profil_Philip_Frerk.pdf" target="_blank"><i class="fa fa-download"></i> </a>
+                     I am a freelance software developer with a focus on .NET in combination with cloud-native technologies.
                   </p>
-                  <p>
-
-                  Skills:
-                  <ul>
-                     <li>
-                        <span style="font-weight: bold;">Programming:</span> C#, Javascript/Typescript
-                     </li>
-                     <li> 
-                        <span style="font-weight: bold;">.NET Platform:</span> ASP.NET, ASP.NET Core, Entity Framework 
-                     </li>
-                     <li>
-                        <span style="font-weight: bold;">DevOps/Cloud:</span> Docker, Kubernetes, Helm, Azure DevOps, CI/CD-Pipelines, Kafka, Prometheus, Azure App Service 
-                     </li>
-                     <li>
-                        <span style="font-weight: bold;">Databases:</span> SQL Server, MongoDB
-                     </li>
-                     <li>
-                        <span style="font-weight: bold;">Soft skills:</span> Team player, good communication skills, Agile mindset, Scrum
-                     </li>
-                  </ul>
-                  </p>
+                  <a href="assets/Profil_Philip_Frerk.pdf" target="_blank" class="download-link">
+                     <i class="fa fa-download"></i> Download detailed profile
+                  </a>
+                  
+                  <div class="skills-section">
+                     <h5>Key Skills:</h5>
+                     <div class="skill-tags">
+                        <span class="tag">C#</span>
+                        <span class="tag">JavaScript/TypeScript</span>
+                        <span class="tag">ASP.NET Core</span>
+                        <span class="tag">Entity Framework</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">Azure DevOps</span>
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">Kafka</span>
+                        <span class="tag">Prometheus</span>
+                        <span class="tag">SQL Server</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Agile/Scrum</span>
+                     </div>
+                  </div>
                </div>
             </div>
 
-            <div class="row item">
-
-               <div class="twelve columns">
-                  <h3><a href="https://www.diamant-software.de" target="_blank">Diamant Software GmbH</a></h3>
-                  <p class="info">Full Stack Software Engineer<span>&bull;</span> <em class="date">Aug 2019 - Dec 2024</em></p>
-                  <p>Download job reference <a href="assets/Diamant_Zeugnis_Philip Frerk.pdf" target="_blank"><i class="fa fa-download"></i> </a></p>
+            <div class="timeline-item">
+               <div class="timeline-marker"></div>
+               <div class="timeline-content">
+                  <span class="timeline-date">Aug 2019 - Dec 2024</span>
+                  <h4>
+                     <a href="https://www.diamant-software.de" target="_blank">Diamant Software GmbH</a>
+                  </h4>
+                  <p class="company">Full Stack Software Engineer</p>
                   <p>
-                     Our development team has the task, together with our AI research team, to establish artificial intelligence in our accounting software.
-                     Current examples are the development of a chat bot or automatic processing of invoice documents.
-                  <ul>
-                     <li>Backend development with C# and .Net Core, partially also Python</li>
+                     Our development team has the task, together with our AI research team, to establish artificial intelligence 
+                     in our accounting software. Current examples are the development of a chat bot or automatic processing of invoice documents.
+                  </p>
+                  <a href="assets/Diamant_Zeugnis_Philip Frerk.pdf" target="_blank" class="download-link">
+                     <i class="fa fa-download"></i> Download job reference
+                  </a>
+                  <ul class="work-highlights">
+                     <li>Backend development with C# and .NET Core, partially also Python</li>
                      <li>Event-driven architecture using Apache Kafka</li>
                      <li>Amazon S3 for storing documents</li>
                      <li>MongoDB for storing data</li>
                      <li>Frontend development with Angular</li>
-                     <li>Containerization with Docker and Kubernetes </li>
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3><a href="https://www.dspace.com" target="_blank">DSPACE GmbH</a></h3>
-                  <p class="info">Working student<span>&bull;</span> <em class="date">Sep 2016 - Mar 2019</em></p>
-                  <p>
-                     This was my first job in software development. I learned a lot in the 2.5 years at DSPACE and was able to improve my programming skills significantly.
-                    
-                  <ul>
-                     <li>Java Desktop Application</li>
-                     <li>Automatic UI Testing</li>
-                     <li>Job reference <a href="assets/dspace_Zeugnis_PhilipFrerk.pdf" target="_blank"><i class="fa fa-download"></i> </a> </li>
+                     <li>Containerization with Docker and Kubernetes</li>
                   </ul>
-                  <div class="columns download">
-                  <p>
-                  </p>
                </div>
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-         </div> <!-- main-col end -->
-
-      </div> <!-- End Work -->
-
-      <!-- Education
-      ----------------------------------------------- -->
-      <div class="row education">
-
-         <div class="three columns header-col">
-            <h1><span>Education</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>University of Paderborn</h3>
-                  <p class="info">Bachelor's und Master's degree in computer science<span>&bull;</span> <em class="date">2013 - 2019</em></p>
-                  <p>
-                  <ul>
-                     <li>Focus on Software Engineering and Data Science</li>
-                     <li>Development of a <a href="https://github.com/dice-group/Squirrel" target="_blank">Crawler for the Semantic Web</a> - grade: 1.0</li>
-                     <li>Master's Thesis about <a href="https://github.com/ph1l1pF/MastersThesisNew/blob/master/thesis/thesis_final.pdf" target="_blank"> compression of knowledge graphs</a> - grade: 1.3</li>
-                     <li>Co-Author of a <a href="https://www.springerprofessional.de/applying-grammar-based-compression-to-rdf/19211434" target="_blank">paper</a> based on the master's thesis </li>
-                  </ul>
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-            
-
-            </div> <!-- item end -->
-
-         </div> <!-- main-col end -->
-
-      </div> <!-- End Education -->
-
-   </section> <!-- Resume Section End-->
-
-
-           
-
-
-   <!-- Contact Section
-   ================================================== -->
-   <section id="contact">
-
-         <div class="row section-head">
-            
-            <div class="ten columns">
-
-                  <p class="lead">Feel free to contact me! I am always open to new interesting projects and challenges.
-                  </p>
-
             </div>
 
-         </div>
-
-         <div class="row">
-
-
-            <aside class="four columns footer-widgets">
-
-               <div class="widget widget_contact">
-
-					   <h4>Contact details</h4>
-					   <p class="address">
-						   Philip Frerk<br>
-						   Reach me over Email or <a href="https://www.linkedin.com/in/philip-frerk-6a3128152/" target="_blank">LinkedIn</a>
-					   </p>
-
-				   </div>
-
-            </aside>
-
-      </div>
-
-   </section> <!-- Contact Section End-->
-
-
-   <!-- footer
-   ================================================== -->
-   <footer>
-
-      <div class="row">
-
-         <div class="twelve columns">
-
-            <ul class="social-links">
-               <li><a href="https://www.github.com/ph1l1pf" target="_blank"><i class="fa fa-github"></i></a></li>
-               <li><a href="https://www.linkedin.com/in/philip-frerk-6a3128152/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-               <li>
-                  <a href="https://www.freelancermap.de/profil/philip-frerk" target="_blank" title="Profil von Philip Frerk auf www.freelancermap.de">
-                     <img loading="lazy" style="width:118px; height:24px" src="https://www.freelancermap.de/images/widgets/dashboard/fm-profile-badge-black.svg">
+            <div class="timeline-item">
+               <div class="timeline-marker"></div>
+               <div class="timeline-content">
+                  <span class="timeline-date">Sep 2016 - Mar 2019</span>
+                  <h4>
+                     <a href="https://www.dspace.com" target="_blank">DSPACE GmbH</a>
+                  </h4>
+                  <p class="company">Working Student</p>
+                  <p>
+                     This was my first job in software development. I learned a lot in the 2.5 years at DSPACE 
+                     and was able to improve my programming skills significantly.
+                  </p>
+                  <ul class="work-highlights">
+                     <li>Java Desktop Application</li>
+                     <li>Automatic UI Testing</li>
+                  </ul>
+                  <a href="assets/dspace_Zeugnis_PhilipFrerk.pdf" target="_blank" class="download-link">
+                     <i class="fa fa-download"></i> Job reference
                   </a>
-               </li>
-            </ul>
-
-            <ul class="copyright">
-               <li>&copy; Copyright 2021 Philip Frerk</li>
-               <li><a href="impress.html">Impress</a></li>
-               <li>Design by <a href="http://www.styleshout.com/" title="Styleshout" target="_blank">Styleshout</a></li>   
-            </ul>
-
+               </div>
+            </div>
          </div>
 
-         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
-
+         <!-- Education -->
+         <div class="resume-block">
+            <h3 class="block-title">Education</h3>
+            
+            <div class="timeline-item">
+               <div class="timeline-marker"></div>
+               <div class="timeline-content">
+                  <span class="timeline-date">2013 - 2019</span>
+                  <h4>University of Paderborn</h4>
+                  <p class="company">Bachelor's and Master's degree in Computer Science</p>
+                  <ul class="work-highlights">
+                     <li>Focus on Software Engineering and Data Science</li>
+                     <li>Development of a <a href="https://github.com/dice-group/Squirrel" target="_blank">Crawler for the Semantic Web</a> - grade: 1.0</li>
+                     <li>Master's Thesis about <a href="https://github.com/ph1l1pF/MastersThesisNew/blob/master/thesis/thesis_final.pdf" target="_blank">compression of knowledge graphs</a> - grade: 1.3</li>
+                     <li>Co-Author of a <a href="https://www.springerprofessional.de/applying-grammar-based-compression-to-rdf/19211434" target="_blank">paper</a> based on the master's thesis</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
       </div>
+   </section>
 
-   </footer> <!-- Footer End-->
+   <!-- Contact Section -->
+   <section id="contact" class="section">
+      <div class="container">
+         <h2 class="section-title centered">Get In Touch</h2>
+         <p class="section-subtitle centered">
+            Feel free to contact me! I am always open to new interesting projects and challenges.
+         </p>
+         
+         <div class="contact-content">
+            <div class="contact-card">
+               <div class="contact-icon">
+                  <i class="fa fa-envelope"></i>
+               </div>
+               <h4>Email</h4>
+               <p>philip[dot]frerk[at]gmail[dot]com</p>
+            </div>
+            
+            <div class="contact-card">
+               <div class="contact-icon">
+                  <i class="fa fa-linkedin"></i>
+               </div>
+               <h4>LinkedIn</h4>
+               <p>
+                  <a href="https://www.linkedin.com/in/philip-frerk-6a3128152/" target="_blank">
+                     Connect with me
+                  </a>
+               </p>
+            </div>
+            
+            <div class="contact-card">
+               <div class="contact-icon">
+                  <i class="fa fa-github"></i>
+               </div>
+               <h4>GitHub</h4>
+               <p>
+                  <a href="https://www.github.com/ph1l1pf" target="_blank">
+                     View my projects
+                  </a>
+               </p>
+            </div>
+         </div>
+      </div>
+   </section>
 
-   <!-- Java Script
-   ================================================== -->
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+   <!-- Footer -->
+   <footer class="footer">
+      <div class="container">
+         <div class="footer-content">
+            <div class="social-links">
+               <a href="https://www.github.com/ph1l1pf" target="_blank" aria-label="GitHub">
+                  <i class="fa fa-github"></i>
+               </a>
+               <a href="https://www.linkedin.com/in/philip-frerk-6a3128152/" target="_blank" aria-label="LinkedIn">
+                  <i class="fa fa-linkedin"></i>
+               </a>
+               <a href="https://www.freelancermap.de/profil/philip-frerk" target="_blank" aria-label="FreelancerMap">
+                  <img src="https://www.freelancermap.de/images/widgets/dashboard/fm-profile-badge-black.svg" alt="FreelancerMap" style="width:118px; height:24px">
+               </a>
+            </div>
+            <div class="footer-links">
+               <a href="impress.html">Impress</a>
+               <span class="separator">|</span>
+               <span>&copy; 2025 Philip Frerk</span>
+               <span class="separator">|</span>
+               <span>Original Design by <a href="http://www.styleshout.com/" target="_blank">Styleshout</a></span>
+            </div>
+         </div>
+      </div>
+      <button id="scroll-top" aria-label="Scroll to top">
+         <i class="fa fa-chevron-up"></i>
+      </button>
+   </footer>
 
-   <script src="js/jquery.flexslider.js"></script>
-   <script src="js/waypoints.js"></script>
-   <script src="js/jquery.fittext.js"></script>
-   <script src="js/magnific-popup.js"></script>
-   <script src="js/init.js"></script>
-
+   <!-- Scripts -->
+   <script src="js/modern.js"></script>
 </body>
-
 </html>
