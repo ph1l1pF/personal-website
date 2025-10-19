@@ -199,6 +199,53 @@
       });
    }
 
+   // Language Switcher
+   const langButtons = document.querySelectorAll('.lang-btn');
+   let currentLang = localStorage.getItem('language') || 'en';
+
+   // Initialize language
+   function initLanguage() {
+      document.documentElement.lang = currentLang;
+      updateLanguage(currentLang);
+      updateActiveLanguageButton(currentLang);
+   }
+
+   // Update all translatable content
+   function updateLanguage(lang) {
+      const elements = document.querySelectorAll('[data-en][data-de]');
+      elements.forEach(element => {
+         const text = element.getAttribute(`data-${lang}`);
+         if (text) {
+            element.textContent = text;
+         }
+      });
+   }
+
+   // Update active language button
+   function updateActiveLanguageButton(lang) {
+      langButtons.forEach(btn => {
+         btn.classList.remove('active');
+         if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+         }
+      });
+   }
+
+   // Handle language button clicks
+   langButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+         const selectedLang = this.getAttribute('data-lang');
+         currentLang = selectedLang;
+         localStorage.setItem('language', selectedLang);
+         document.documentElement.lang = selectedLang;
+         updateLanguage(selectedLang);
+         updateActiveLanguageButton(selectedLang);
+      });
+   });
+
+   // Initialize language on page load
+   initLanguage();
+
    // Log console message
    console.log('%c👋 Hi there!', 'font-size: 24px; font-weight: bold; color: #2563eb;');
    console.log('%cThanks for checking out my website!', 'font-size: 14px; color: #475569;');

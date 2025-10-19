@@ -26,10 +26,15 @@
             <span></span>
          </button>
          <ul class="nav-menu">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#resume" class="nav-link">Experience</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="#home" class="nav-link" data-en="Home" data-de="Startseite">Home</a></li>
+            <li><a href="#about" class="nav-link" data-en="About" data-de="Über mich">About</a></li>
+            <li><a href="#resume" class="nav-link" data-en="Experience" data-de="Erfahrung">Experience</a></li>
+            <li><a href="#contact" class="nav-link" data-en="Contact" data-de="Kontakt">Contact</a></li>
+            <li class="lang-switcher">
+               <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+               <span class="lang-separator">|</span>
+               <button class="lang-btn" data-lang="de" aria-label="Switch to German">DE</button>
+            </li>
          </ul>
       </div>
    </nav>
@@ -39,16 +44,16 @@
       <div class="hero-content">
          <div class="hero-text">
             <h1 class="hero-title">
-               <span class="greeting">Hi, I'm</span>
+               <span class="greeting" data-en="Hi, I'm" data-de="Hallo, ich bin">Hi, I'm</span>
                <span class="name">Philip Frerk</span>
             </h1>
-            <p class="hero-subtitle">Freelance Software Engineer</p>
-            <p class="hero-description">
+            <p class="hero-subtitle" data-en="Freelance Software Engineer" data-de="Freiberuflicher Softwareentwickler">Freelance Software Engineer</p>
+            <p class="hero-description" data-en="Specializing in .NET, Cloud Technologies & DevOps" data-de="Spezialisiert auf .NET, Cloud-Technologien & DevOps">
                Specializing in .NET, Cloud Technologies & DevOps
             </p>
             <div class="hero-cta">
-               <a href="#about" class="btn btn-primary">Learn More</a>
-               <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+               <a href="#about" class="btn btn-primary" data-en="Learn More" data-de="Mehr erfahren">Learn More</a>
+               <a href="#contact" class="btn btn-secondary" data-en="Get in Touch" data-de="Kontakt aufnehmen">Get in Touch</a>
             </div>
             <div class="social-links">
                <a href="https://www.github.com/ph1l1pf" target="_blank" aria-label="GitHub">
@@ -78,20 +83,20 @@
                <img src="images/profilepic.jpg" alt="Philip Frerk" class="profile-img">
             </div>
             <div class="about-text">
-               <h2 class="section-title">About Me</h2>
+               <h2 class="section-title" data-en="About Me" data-de="Über mich">About Me</h2>
                <h3 class="subtitle">Philip Frerk, M.Sc.</h3>
-               <p>
+               <p data-en="I am a passionate software developer with a focus on backend development, CI/CD, and cloud technologies. Early on, I taught myself programming and later deepened my knowledge during my computer science studies and as a software engineer." data-de="Ich bin ein leidenschaftlicher Softwareentwickler mit Fokus auf Backend-Entwicklung, CI/CD und Cloud-Technologien. Bereits früh brachte ich mir das Programmieren selbst bei und vertiefte später mein Wissen während meines Informatikstudiums und als Softwareentwickler.">
                   I am a passionate software developer with a focus on backend development, CI/CD, and cloud technologies. 
                   Early on, I taught myself programming and later deepened my knowledge during my computer science studies and 
                   as a software engineer.
                </p>
-               <p>
+               <p data-en="My focus is on clean code, solid software architecture, and sustainable, scalable solutions. In addition to development, I am enthusiastic about DevOps and Cloud technologies." data-de="Mein Fokus liegt auf sauberem Code, soliden Softwarearchitekturen und nachhaltigen, skalierbaren Lösungen. Neben der Entwicklung bin ich begeistert von DevOps und Cloud-Technologien.">
                   My focus is on clean code, solid software architecture, and sustainable, scalable solutions. 
                   In addition to development, I am enthusiastic about DevOps and Cloud technologies.
                </p>
                <div class="contact-info">
-                  <h4>Contact Details</h4>
-                  <p class="email">philip[dot]frerk[at]gmail[dot]com</p>
+                  <h4 data-en="Contact Details" data-de="Kontaktdaten">Contact Details</h4>
+                  <p class="email">philip.frerk@gmail.com</p>
                </div>
             </div>
          </div>
@@ -101,27 +106,27 @@
    <!-- Resume Section -->
    <section id="resume" class="section section-alt">
       <div class="container">
-         <h2 class="section-title centered">Experience & Education</h2>
+         <h2 class="section-title centered" data-en="Experience & Education" data-de="Berufserfahrung & Ausbildung">Experience & Education</h2>
          
          <!-- Work Experience -->
          <div class="resume-block">
-            <h3 class="block-title">Work Experience</h3>
+            <h3 class="block-title" data-en="Work Experience" data-de="Berufserfahrung">Work Experience</h3>
             
             <div class="timeline-item">
                <div class="timeline-marker"></div>
                <div class="timeline-content">
                   <span class="timeline-date">Jan 2025 - Present</span>
-                  <h4>Freelancer</h4>
-                  <p class="company">Software Engineer</p>
-                  <p>
+                  <h4 data-en="Freelancer" data-de="Freiberufler">Freelancer</h4>
+                  <p class="company" data-en="Software Engineer" data-de="Softwareentwickler">Software Engineer</p>
+                  <p data-en="I am a freelance software developer with a focus on .NET in combination with cloud-native technologies." data-de="Ich bin ein freiberuflicher Softwareentwickler mit Fokus auf .NET in Kombination mit Cloud-nativen Technologien.">
                      I am a freelance software developer with a focus on .NET in combination with cloud-native technologies.
                   </p>
                   <a href="assets/Profil_Philip_Frerk.pdf" target="_blank" class="download-link">
-                     <i class="fa fa-download"></i> Download detailed profile
+                     <i class="fa fa-download"></i> <span data-en="Download detailed profile" data-de="Detailliertes Profil herunterladen">Download detailed profile</span>
                   </a>
                   
                   <div class="skills-section">
-                     <h5>Key Skills:</h5>
+                     <h5 data-en="Key Skills:" data-de="Wichtige Fähigkeiten:">Key Skills:</h5>
                      <div class="skill-tags">
                         <span class="tag">C#</span>
                         <span class="tag">JavaScript/TypeScript</span>
@@ -148,21 +153,21 @@
                   <h4>
                      <a href="https://www.diamant-software.de" target="_blank">Diamant Software GmbH</a>
                   </h4>
-                  <p class="company">Full Stack Software Engineer</p>
-                  <p>
+                  <p class="company" data-en="Full Stack Software Engineer" data-de="Full Stack Softwareentwickler">Full Stack Software Engineer</p>
+                  <p data-en="Our development team has the task, together with our AI research team, to establish artificial intelligence in our accounting software. Current examples are the development of a chat bot or automatic processing of invoice documents." data-de="Unser Entwicklungsteam hat die Aufgabe, gemeinsam mit unserem KI-Forschungsteam, künstliche Intelligenz in unserer Buchhaltungssoftware zu etablieren. Aktuelle Beispiele sind die Entwicklung eines Chatbots oder die automatische Verarbeitung von Rechnungsdokumenten.">
                      Our development team has the task, together with our AI research team, to establish artificial intelligence 
                      in our accounting software. Current examples are the development of a chat bot or automatic processing of invoice documents.
                   </p>
                   <a href="assets/Diamant_Zeugnis_Philip Frerk.pdf" target="_blank" class="download-link">
-                     <i class="fa fa-download"></i> Download job reference
+                     <i class="fa fa-download"></i> <span data-en="Download job reference" data-de="Arbeitszeugnis herunterladen">Download job reference</span>
                   </a>
                   <ul class="work-highlights">
-                     <li>Backend development with C# and .NET Core, partially also Python</li>
-                     <li>Event-driven architecture using Apache Kafka</li>
-                     <li>Amazon S3 for storing documents</li>
-                     <li>MongoDB for storing data</li>
-                     <li>Frontend development with Angular</li>
-                     <li>Containerization with Docker and Kubernetes</li>
+                     <li data-en="Backend development with C# and .NET Core, partially also Python" data-de="Backend-Entwicklung mit C# und .NET Core, teilweise auch Python">Backend development with C# and .NET Core, partially also Python</li>
+                     <li data-en="Event-driven architecture using Apache Kafka" data-de="Ereignisgesteuerte Architektur mit Apache Kafka">Event-driven architecture using Apache Kafka</li>
+                     <li data-en="Amazon S3 for storing documents" data-de="Amazon S3 zur Speicherung von Dokumenten">Amazon S3 for storing documents</li>
+                     <li data-en="MongoDB for storing data" data-de="MongoDB zur Datenspeicherung">MongoDB for storing data</li>
+                     <li data-en="Frontend development with Angular" data-de="Frontend-Entwicklung mit Angular">Frontend development with Angular</li>
+                     <li data-en="Containerization with Docker and Kubernetes" data-de="Containerisierung mit Docker und Kubernetes">Containerization with Docker and Kubernetes</li>
                   </ul>
                </div>
             </div>
@@ -174,17 +179,17 @@
                   <h4>
                      <a href="https://www.dspace.com" target="_blank">DSPACE GmbH</a>
                   </h4>
-                  <p class="company">Working Student</p>
-                  <p>
+                  <p class="company" data-en="Working Student" data-de="Werkstudent">Working Student</p>
+                  <p data-en="This was my first job in software development. I learned a lot in the 2.5 years at DSPACE and was able to improve my programming skills significantly." data-de="Dies war mein erster Job in der Softwareentwicklung. Ich habe in den 2,5 Jahren bei DSPACE viel gelernt und konnte meine Programmierkenntnisse erheblich verbessern.">
                      This was my first job in software development. I learned a lot in the 2.5 years at DSPACE 
                      and was able to improve my programming skills significantly.
                   </p>
                   <ul class="work-highlights">
-                     <li>Java Desktop Application</li>
-                     <li>Automatic UI Testing</li>
+                     <li data-en="Java Desktop Application" data-de="Java Desktop-Anwendung">Java Desktop Application</li>
+                     <li data-en="Automatic UI Testing" data-de="Automatisierte UI-Tests">Automatic UI Testing</li>
                   </ul>
                   <a href="assets/dspace_Zeugnis_PhilipFrerk.pdf" target="_blank" class="download-link">
-                     <i class="fa fa-download"></i> Job reference
+                     <i class="fa fa-download"></i> <span data-en="Job reference" data-de="Arbeitszeugnis">Job reference</span>
                   </a>
                </div>
             </div>
@@ -192,19 +197,19 @@
 
          <!-- Education -->
          <div class="resume-block">
-            <h3 class="block-title">Education</h3>
+            <h3 class="block-title" data-en="Education" data-de="Ausbildung">Education</h3>
             
             <div class="timeline-item">
                <div class="timeline-marker"></div>
                <div class="timeline-content">
                   <span class="timeline-date">2013 - 2019</span>
                   <h4>University of Paderborn</h4>
-                  <p class="company">Bachelor's and Master's degree in Computer Science</p>
+                  <p class="company" data-en="Bachelor's and Master's degree in Computer Science" data-de="Bachelor- und Master-Abschluss in Informatik">Bachelor's and Master's degree in Computer Science</p>
                   <ul class="work-highlights">
-                     <li>Focus on Software Engineering and Data Science</li>
-                     <li>Development of a <a href="https://github.com/dice-group/Squirrel" target="_blank">Crawler for the Semantic Web</a> - grade: 1.0</li>
-                     <li>Master's Thesis about <a href="https://github.com/ph1l1pF/MastersThesisNew/blob/master/thesis/thesis_final.pdf" target="_blank">compression of knowledge graphs</a> - grade: 1.3</li>
-                     <li>Co-Author of a <a href="https://www.springerprofessional.de/applying-grammar-based-compression-to-rdf/19211434" target="_blank">paper</a> based on the master's thesis</li>
+                     <li data-en="Focus on Software Engineering and Data Science" data-de="Schwerpunkt auf Software Engineering und Data Science">Focus on Software Engineering and Data Science</li>
+                     <li><span data-en="Development of a" data-de="Entwicklung eines">Development of a</span> <a href="https://github.com/dice-group/Squirrel" target="_blank"><span data-en="Crawler for the Semantic Web" data-de="Crawlers für das Semantic Web">Crawler for the Semantic Web</span></a> - <span data-en="grade:" data-de="Note:">grade:</span> 1.0</li>
+                     <li><span data-en="Master's Thesis about" data-de="Masterarbeit über">Master's Thesis about</span> <a href="https://github.com/ph1l1pF/MastersThesisNew/blob/master/thesis/thesis_final.pdf" target="_blank"><span data-en="compression of knowledge graphs" data-de="Komprimierung von Wissensgraphen">compression of knowledge graphs</span></a> - <span data-en="grade:" data-de="Note:">grade:</span> 1.3</li>
+                     <li><span data-en="Co-Author of a" data-de="Co-Autor eines">Co-Author of a</span> <a href="https://www.springerprofessional.de/applying-grammar-based-compression-to-rdf/19211434" target="_blank"><span data-en="paper" data-de="Papers">paper</span></a> <span data-en="based on the master's thesis" data-de="basierend auf der Masterarbeit">based on the master's thesis</span></li>
                   </ul>
                </div>
             </div>
@@ -215,8 +220,8 @@
    <!-- Contact Section -->
    <section id="contact" class="section">
       <div class="container">
-         <h2 class="section-title centered">Get In Touch</h2>
-         <p class="section-subtitle centered">
+         <h2 class="section-title centered" data-en="Get In Touch" data-de="Kontakt aufnehmen">Get In Touch</h2>
+         <p class="section-subtitle centered" data-en="Feel free to contact me! I am always open to new interesting projects and challenges." data-de="Kontaktieren Sie mich gerne! Ich bin immer offen für neue interessante Projekte und Herausforderungen.">
             Feel free to contact me! I am always open to new interesting projects and challenges.
          </p>
          
@@ -225,8 +230,8 @@
                <div class="contact-icon">
                   <i class="fa fa-envelope"></i>
                </div>
-               <h4>Email</h4>
-               <p>philip[dot]frerk[at]gmail[dot]com</p>
+               <h4 data-en="Email" data-de="E-Mail">Email</h4>
+               <p>philip.frerk@gmail.com</p>
             </div>
             
             <div class="contact-card">
@@ -235,7 +240,7 @@
                </div>
                <h4>LinkedIn</h4>
                <p>
-                  <a href="https://www.linkedin.com/in/philip-frerk-6a3128152/" target="_blank">
+                  <a href="https://www.linkedin.com/in/philip-frerk-6a3128152/" target="_blank" data-en="Connect with me" data-de="Mit mir vernetzen">
                      Connect with me
                   </a>
                </p>
@@ -247,7 +252,7 @@
                </div>
                <h4>GitHub</h4>
                <p>
-                  <a href="https://www.github.com/ph1l1pf" target="_blank">
+                  <a href="https://www.github.com/ph1l1pf" target="_blank" data-en="View my projects" data-de="Meine Projekte ansehen">
                      View my projects
                   </a>
                </p>

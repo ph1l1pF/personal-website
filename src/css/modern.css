@@ -45,6 +45,8 @@ body {
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
    overflow-x: hidden;
+   word-wrap: break-word;
+   overflow-wrap: break-word;
 }
 
 /* Typography */
@@ -81,6 +83,7 @@ a:hover {
    max-width: 1200px;
    margin: 0 auto;
    padding: 0 2rem;
+   overflow-x: hidden;
 }
 
 /* Sections */
@@ -197,6 +200,43 @@ a:hover {
 .nav-link:hover::after,
 .nav-link.active::after {
    width: 100%;
+}
+
+/* Language Switcher */
+.lang-switcher {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   margin-left: 1rem;
+   padding-left: 1rem;
+   border-left: 1px solid var(--border-color);
+}
+
+.lang-btn {
+   background: none;
+   border: none;
+   color: var(--text-medium);
+   font-size: 0.875rem;
+   font-weight: 600;
+   cursor: pointer;
+   padding: 0.25rem 0.5rem;
+   border-radius: 4px;
+   transition: var(--transition);
+}
+
+.lang-btn:hover {
+   color: var(--primary-color);
+   background: rgba(37, 99, 235, 0.1);
+}
+
+.lang-btn.active {
+   color: var(--primary-color);
+   background: rgba(37, 99, 235, 0.15);
+}
+
+.lang-separator {
+   color: var(--border-color);
+   font-weight: 300;
 }
 
 .mobile-menu-btn {
@@ -333,7 +373,7 @@ a:hover {
 
 .social-links {
    display: flex;
-   gap: 1.5rem;
+   gap: 2rem;
    align-items: center;
 }
 
@@ -341,7 +381,7 @@ a:hover {
    display: flex;
    align-items: center;
    justify-content: center;
-   width: 45px;
+   min-width: 45px;
    height: 45px;
    border-radius: 50%;
    background: rgba(255, 255, 255, 0.1);
@@ -349,6 +389,7 @@ a:hover {
    font-size: 1.25rem;
    transition: var(--transition);
    backdrop-filter: blur(10px);
+   padding: 0 0.5rem;
 }
 
 .social-links a:hover {
@@ -439,6 +480,9 @@ a:hover {
    background: white;
    border-radius: var(--border-radius);
    box-shadow: var(--shadow-md);
+   min-width: 0;
+   word-wrap: break-word;
+   overflow-wrap: break-word;
 }
 
 .subtitle {
@@ -703,6 +747,8 @@ a:hover {
 .footer .social-links a {
    background: rgba(255, 255, 255, 0.1);
    color: white;
+   min-width: 45px;
+   padding: 0 0.5rem;
 }
 
 .footer .social-links a:hover {
@@ -801,6 +847,7 @@ a:hover {
 @media (max-width: 768px) {
    .container {
       padding: 0 1rem;
+      overflow-x: hidden;
    }
 
    .section {
@@ -826,6 +873,16 @@ a:hover {
 
    .mobile-menu-btn {
       display: flex;
+   }
+
+   .lang-switcher {
+      margin-left: 0;
+      padding-left: 0;
+      border-left: none;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1rem;
+      margin-top: 1rem;
+      justify-content: center;
    }
 
    .mobile-menu-btn.active span:nth-child(1) {
@@ -858,6 +915,7 @@ a:hover {
       flex-direction: column;
       gap: 2rem;
       max-width: 100%;
+      padding: 0;
    }
 
    .about-image {
@@ -867,6 +925,27 @@ a:hover {
 
    .about-text {
       padding: 1.5rem;
+      margin: 0;
+      width: 100%;
+      box-sizing: border-box;
+   }
+
+   .about-text p {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+      max-width: 100%;
+   }
+
+   .contact-info {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, var(--bg-gray), #f1f5f9);
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--primary-color);
+      box-shadow: var(--shadow-sm);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
    }
 
    .profile-img {
@@ -902,6 +981,11 @@ a:hover {
       padding: 1rem;
    }
 
+   .container {
+      padding: 0 0.75rem;
+      overflow-x: hidden;
+   }
+
    .hero {
       padding: 5rem 1rem 3rem;
    }
@@ -909,6 +993,7 @@ a:hover {
    .social-links {
       flex-wrap: wrap;
       justify-content: center;
+      gap: 1.5rem;
    }
 
    .timeline-item {
