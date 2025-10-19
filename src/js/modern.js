@@ -65,7 +65,7 @@
       });
    });
 
-   // Smooth scroll for anchor links
+   // Smooth scroll for anchor links (Safari compatible)
    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
          const href = this.getAttribute('href');
@@ -81,13 +81,44 @@
             e.preventDefault();
             const offsetTop = target.offsetTop - 80; // Account for fixed navbar
             
-            window.scrollTo({
-               top: offsetTop,
-               behavior: 'smooth'
-            });
+            // Safari-compatible smooth scrolling
+            if ('scrollBehavior' in document.documentElement.style) {
+               window.scrollTo({
+                  top: offsetTop,
+                  behavior: 'smooth'
+               });
+            } else {
+               // Fallback for Safari
+               smoothScrollTo(offsetTop);
+            }
          }
       });
    });
+
+   // Safari-compatible smooth scroll function
+   function smoothScrollTo(targetPosition) {
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      const duration = 800;
+      let start = null;
+
+      function animation(currentTime) {
+         if (start === null) start = currentTime;
+         const timeElapsed = currentTime - start;
+         const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+         window.scrollTo(0, run);
+         if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      function easeInOutQuad(t, b, c, d) {
+         t /= d / 2;
+         if (t < 1) return c / 2 * t * t + b;
+         t--;
+         return -c / 2 * (t * (t - 2) - 1) + b;
+      }
+
+      requestAnimationFrame(animation);
+   }
 
    // Scroll to top button
    const scrollTopBtn = document.getElementById('scroll-top');
@@ -102,10 +133,16 @@
       });
 
       scrollTopBtn.addEventListener('click', function() {
-         window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-         });
+         // Safari-compatible smooth scrolling
+         if ('scrollBehavior' in document.documentElement.style) {
+            window.scrollTo({
+               top: 0,
+               behavior: 'smooth'
+            });
+         } else {
+            // Fallback for Safari
+            smoothScrollTo(0);
+         }
       });
    }
 
@@ -199,12 +236,30 @@
       });
    }
 
-   // Language Switcher
+   // Language Switcher (Safari compatible)
    const langButtons = document.querySelectorAll('.lang-btn');
-   let currentLang = localStorage.getItem('language') || 'en';
+   let currentLang = 'en';
+
+   // Safari-compatible localStorage check
+   function getStoredLanguage() {
+      try {
+         return localStorage.getItem('language') || 'en';
+      } catch (e) {
+         return 'en';
+      }
+   }
+
+   function setStoredLanguage(lang) {
+      try {
+         localStorage.setItem('language', lang);
+      } catch (e) {
+         console.warn('Could not save language preference');
+      }
+   }
 
    // Initialize language
    function initLanguage() {
+      currentLang = getStoredLanguage();
       document.documentElement.lang = currentLang;
       updateLanguage(currentLang);
       updateActiveLanguageButton(currentLang);
@@ -233,10 +288,11 @@
 
    // Handle language button clicks
    langButtons.forEach(btn => {
-      btn.addEventListener('click', function() {
+      btn.addEventListener('click', function(e) {
+         e.preventDefault();
          const selectedLang = this.getAttribute('data-lang');
          currentLang = selectedLang;
-         localStorage.setItem('language', selectedLang);
+         setStoredLanguage(selectedLang);
          document.documentElement.lang = selectedLang;
          updateLanguage(selectedLang);
          updateActiveLanguageButton(selectedLang);
@@ -244,7 +300,11 @@
    });
 
    // Initialize language on page load
-   initLanguage();
+   if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initLanguage);
+   } else {
+      initLanguage();
+   }
 
    // Log console message
    console.log('%c👋 Hi there!', 'font-size: 24px; font-weight: bold; color: #2563eb;');

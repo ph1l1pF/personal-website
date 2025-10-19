@@ -34,6 +34,7 @@
 html {
    scroll-behavior: smooth;
    font-size: 16px;
+   -webkit-overflow-scrolling: touch; /* Safari smooth scrolling */
 }
 
 body {
@@ -47,6 +48,7 @@ body {
    overflow-x: hidden;
    word-wrap: break-word;
    overflow-wrap: break-word;
+   -webkit-overflow-scrolling: touch; /* Safari momentum scrolling */
 }
 
 /* Typography */
@@ -145,8 +147,11 @@ a:hover {
    z-index: 1000;
    background: rgba(255, 255, 255, 0.95);
    backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px); /* Safari support */
    box-shadow: var(--shadow-sm);
    transition: var(--transition);
+   transform: translateZ(0);
+   -webkit-transform: translateZ(0); /* Safari hardware acceleration */
 }
 
 #navbar.scrolled {
@@ -389,7 +394,10 @@ a:hover {
    font-size: 1.25rem;
    transition: var(--transition);
    backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px); /* Safari support */
    padding: 0 0.5rem;
+   transform: translateZ(0);
+   -webkit-transform: translateZ(0); /* Safari hardware acceleration */
 }
 
 .social-links a:hover {
@@ -426,6 +434,9 @@ a:hover {
    color: white;
    font-size: 1.25rem;
    backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px); /* Safari support */
+   transform: translateZ(0);
+   -webkit-transform: translateZ(0); /* Safari hardware acceleration */
 }
 
 .scroll-indicator a:hover {
@@ -749,6 +760,10 @@ a:hover {
    color: white;
    min-width: 45px;
    padding: 0 0.5rem;
+   backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px); /* Safari support */
+   transform: translateZ(0);
+   -webkit-transform: translateZ(0); /* Safari hardware acceleration */
 }
 
 .footer .social-links a:hover {
