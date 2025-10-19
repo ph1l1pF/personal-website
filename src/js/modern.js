@@ -306,6 +306,219 @@
       initLanguage();
    }
 
+   // Cookie Consent Management
+   const cookieBanner = document.getElementById('cookie-banner');
+   const cookieModal = document.getElementById('cookie-settings-modal');
+   const cookieAcceptAll = document.getElementById('cookie-accept-all');
+   const cookieReject = document.getElementById('cookie-reject');
+   const cookieSettings = document.getElementById('cookie-settings');
+   const cookieModalClose = document.getElementById('cookie-modal-close');
+   const cookieSaveSettings = document.getElementById('cookie-save-settings');
+   const cookieAcceptAllModal = document.getElementById('cookie-accept-all-modal');
+
+   // Cookie consent storage keys
+   const COOKIE_CONSENT_KEY = 'cookieConsent';
+   const COOKIE_SETTINGS_KEY = 'cookieSettings';
+
+   // Initialize cookie banner
+   function initCookieBanner() {
+      const consent = getCookieConsent();
+      if (!consent) {
+         showCookieBanner();
+      } else {
+         applyCookieSettings(consent);
+      }
+   }
+
+   // Get cookie consent from localStorage
+   function getCookieConsent() {
+      try {
+         const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+         return consent ? JSON.parse(consent) : null;
+      } catch (e) {
+         return null;
+      }
+   }
+
+   // Save cookie consent to localStorage
+   function saveCookieConsent(consent) {
+      try {
+         localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
+         localStorage.setItem(COOKIE_SETTINGS_KEY, JSON.stringify(consent));
+      } catch (e) {
+         console.warn('Could not save cookie consent');
+      }
+   }
+
+   // Show cookie banner
+   function showCookieBanner() {
+      if (cookieBanner) {
+         setTimeout(() => {
+            cookieBanner.classList.add('show');
+         }, 1000); // Show after 1 second
+      }
+   }
+
+   // Hide cookie banner
+   function hideCookieBanner() {
+      if (cookieBanner) {
+         cookieBanner.classList.remove('show');
+         setTimeout(() => {
+            cookieBanner.style.display = 'none';
+         }, 300);
+      }
+   }
+
+   // Show cookie settings modal
+   function showCookieModal() {
+      if (cookieModal) {
+         cookieModal.classList.add('show');
+         document.body.style.overflow = 'hidden';
+      }
+   }
+
+   // Hide cookie settings modal
+   function hideCookieModal() {
+      if (cookieModal) {
+         cookieModal.classList.remove('show');
+         document.body.style.overflow = '';
+      }
+   }
+
+   // Apply cookie settings
+   function applyCookieSettings(consent) {
+      // Essential cookies are always enabled
+      if (consent.essential) {
+         // Essential cookies are always active
+      }
+
+      // Analytics cookies
+      if (consent.analytics) {
+         // Enable analytics tracking here
+         console.log('Analytics cookies enabled');
+      } else {
+         // Disable analytics tracking
+         console.log('Analytics cookies disabled');
+      }
+
+      // Functional cookies
+      if (consent.functional) {
+         // Enable functional features like language preferences
+         console.log('Functional cookies enabled');
+      } else {
+         // Disable functional features
+         console.log('Functional cookies disabled');
+      }
+   }
+
+   // Accept all cookies
+   function acceptAllCookies() {
+      const consent = {
+         essential: true,
+         analytics: true,
+         functional: true,
+         timestamp: new Date().toISOString()
+      };
+      saveCookieConsent(consent);
+      applyCookieSettings(consent);
+      hideCookieBanner();
+      hideCookieModal();
+   }
+
+   // Reject all cookies (except essential)
+   function rejectAllCookies() {
+      const consent = {
+         essential: true,
+         analytics: false,
+         functional: false,
+         timestamp: new Date().toISOString()
+      };
+      saveCookieConsent(consent);
+      applyCookieSettings(consent);
+      hideCookieBanner();
+      hideCookieModal();
+   }
+
+   // Save custom cookie settings
+   function saveCustomSettings() {
+      const essential = document.getElementById('essential-cookies').checked;
+      const analytics = document.getElementById('analytics-cookies').checked;
+      const functional = document.getElementById('functional-cookies').checked;
+
+      const consent = {
+         essential: essential,
+         analytics: analytics,
+         functional: functional,
+         timestamp: new Date().toISOString()
+      };
+
+      saveCookieConsent(consent);
+      applyCookieSettings(consent);
+      hideCookieBanner();
+      hideCookieModal();
+   }
+
+   // Load saved cookie settings into modal
+   function loadCookieSettings() {
+      const consent = getCookieConsent();
+      if (consent) {
+         document.getElementById('essential-cookies').checked = consent.essential;
+         document.getElementById('analytics-cookies').checked = consent.analytics;
+         document.getElementById('functional-cookies').checked = consent.functional;
+      }
+   }
+
+   // Event listeners for cookie banner
+   if (cookieAcceptAll) {
+      cookieAcceptAll.addEventListener('click', acceptAllCookies);
+   }
+
+   if (cookieReject) {
+      cookieReject.addEventListener('click', rejectAllCookies);
+   }
+
+   if (cookieSettings) {
+      cookieSettings.addEventListener('click', function() {
+         loadCookieSettings();
+         showCookieModal();
+      });
+   }
+
+   if (cookieModalClose) {
+      cookieModalClose.addEventListener('click', hideCookieModal);
+   }
+
+   if (cookieSaveSettings) {
+      cookieSaveSettings.addEventListener('click', saveCustomSettings);
+   }
+
+   if (cookieAcceptAllModal) {
+      cookieAcceptAllModal.addEventListener('click', acceptAllCookies);
+   }
+
+   // Close modal when clicking outside
+   if (cookieModal) {
+      cookieModal.addEventListener('click', function(e) {
+         if (e.target === cookieModal) {
+            hideCookieModal();
+         }
+      });
+   }
+
+   // Close modal with Escape key
+   document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && cookieModal.classList.contains('show')) {
+         hideCookieModal();
+      }
+   });
+
+   // Initialize cookie banner on page load
+   if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCookieBanner);
+   } else {
+      initCookieBanner();
+   }
+
    // Log console message
    console.log('%c👋 Hi there!', 'font-size: 24px; font-weight: bold; color: #2563eb;');
    console.log('%cThanks for checking out my website!', 'font-size: 14px; color: #475569;');
