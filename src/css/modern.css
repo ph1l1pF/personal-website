@@ -325,6 +325,13 @@ a:hover {
    color: rgba(255, 255, 255, 0.95);
 }
 
+.hero-experience {
+   font-size: clamp(1rem, 2vw, 1.125rem);
+   font-weight: 500;
+   margin-bottom: 0.75rem;
+   color: rgba(255, 255, 255, 0.9);
+}
+
 .hero-description {
    font-size: clamp(1rem, 2vw, 1.25rem);
    margin-bottom: 2rem;
@@ -1351,6 +1358,62 @@ a:hover {
    .cookie-btn {
       width: 100%;
    }
+}
+
+/* Legal Pages */
+.legal-header {
+   position: sticky;
+   top: 0;
+   z-index: 100;
+   background: rgba(255, 255, 255, 0.95);
+   backdrop-filter: blur(10px);
+   border-bottom: 1px solid var(--border-color);
+}
+
+.legal-header-inner {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 1rem 1.5rem;
+   gap: 1rem;
+}
+
+.legal-back {
+   font-weight: 500;
+   color: var(--text-medium);
+}
+
+.legal-back:hover {
+   color: var(--primary-color);
+}
+
+.legal-page {
+   padding: 3rem 0 4rem;
+}
+
+.legal-page .impressum {
+   max-width: 800px;
+   margin: 0 auto;
+}
+
+.legal-page .impressum h1 {
+   margin-bottom: 1.5rem;
+}
+
+.legal-page .impressum h2 {
+   font-size: 1.25rem;
+   margin-top: 2rem;
+   margin-bottom: 0.75rem;
+}
+
+.legal-page .impressum p {
+   margin-bottom: 1.25rem;
+}
+
+.legal-header .lang-switcher {
+   margin-left: 0;
+   padding-left: 0;
+   border-left: none;
 }
 
 /* Print Styles */

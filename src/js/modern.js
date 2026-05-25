@@ -239,6 +239,11 @@
    // Language Switcher (Safari compatible)
    const langButtons = document.querySelectorAll('.lang-btn');
    let currentLang = 'en';
+   const CAREER_START_YEAR = 2019;
+
+   function getYearsOfExperience() {
+      return new Date().getFullYear() - CAREER_START_YEAR;
+   }
 
    // Safari-compatible localStorage check
    function getStoredLanguage() {
@@ -267,13 +272,26 @@
 
    // Update all translatable content
    function updateLanguage(lang) {
+      const years = getYearsOfExperience();
       const elements = document.querySelectorAll('[data-en][data-de]');
       elements.forEach(element => {
          const text = element.getAttribute(`data-${lang}`);
          if (text) {
-            element.textContent = text;
+            element.textContent = text.replace(/\{years\}/g, years);
          }
       });
+
+      document.querySelectorAll('[data-lang-block]').forEach(block => {
+         block.hidden = block.getAttribute('data-lang-block') !== lang;
+      });
+
+      const pageTitle = document.querySelector('title[data-en][data-de]');
+      if (pageTitle) {
+         const title = pageTitle.getAttribute(`data-${lang}`);
+         if (title) {
+            pageTitle.textContent = title;
+         }
+      }
    }
 
    // Update active language button
