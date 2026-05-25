@@ -719,6 +719,29 @@ a:hover {
    font-weight: 500;
 }
 
+.project-meta {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: baseline;
+   gap: 0.5rem;
+   font-size: 1rem;
+   color: var(--text-medium);
+   margin-bottom: 1rem;
+   font-weight: 500;
+}
+
+.project-meta-label {
+   font-size: 0.8125rem;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 0.05em;
+   color: var(--text-light);
+}
+
+.project-meta-label::after {
+   content: ':';
+}
+
 .download-link {
    display: inline-flex;
    align-items: center;
