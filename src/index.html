@@ -6,10 +6,13 @@
    <meta name="description" content="Self-employed software engineer specializing in .NET, cloud technologies, and DevOps — selected client projects in financial software and the energy industry.">
    <meta name="author" content="Philip Frerk">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-   <link rel="canonical" href="https://philip-frerk.de/">
+   <link rel="canonical" href="https://philip-frerk.de/?lang=en">
+   <link rel="alternate" hreflang="en" href="https://philip-frerk.de/?lang=en">
+   <link rel="alternate" hreflang="de" href="https://philip-frerk.de/?lang=de">
+   <link rel="alternate" hreflang="x-default" href="https://philip-frerk.de/?lang=en">
 
    <meta property="og:type" content="website">
-   <meta property="og:url" content="https://philip-frerk.de/">
+   <meta property="og:url" content="https://philip-frerk.de/?lang=en">
    <meta property="og:title" content="Philip Frerk — Self-Employed Software Engineer">
    <meta property="og:description" content="Self-employed software engineer specializing in .NET, cloud technologies, and DevOps — with project experience in financial software and the energy industry.">
    <meta property="og:image" content="https://philip-frerk.de/images/profilepic.jpg">
@@ -26,6 +29,14 @@
          try {
             if (localStorage.getItem('theme') === 'dark') {
                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+            var params = new URLSearchParams(window.location.search);
+            var lang = params.get('lang');
+            if (lang !== 'en' && lang !== 'de') {
+               lang = localStorage.getItem('language');
+            }
+            if (lang === 'en' || lang === 'de') {
+               document.documentElement.lang = lang;
             }
          } catch (e) {}
       })();
@@ -47,15 +58,15 @@
          <ul class="nav-menu">
             <li><a href="#home" class="nav-link" data-en="Home" data-de="Startseite">Home</a></li>
             <li><a href="#about" class="nav-link" data-en="About" data-de="Über mich">About</a></li>
-            <li><a href="#resume" class="nav-link" data-en="Projects" data-de="Projekte">Projects</a></li>
+            <li><a href="#projects" class="nav-link" data-en="Projects" data-de="Projekte">Projects</a></li>
             <li><a href="#contact" class="nav-link" data-en="Contact" data-de="Kontakt">Contact</a></li>
-            <li class="lang-switcher">
+         </ul>
+         <div class="nav-controls">
+            <div class="lang-switcher">
                <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
                <span class="lang-separator">|</span>
                <button class="lang-btn" data-lang="de" aria-label="Switch to German">DE</button>
-            </li>
-         </ul>
-         <div class="nav-controls">
+            </div>
             <div class="theme-switcher">
                <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
                   <i class="fa fa-moon-o" aria-hidden="true"></i>
@@ -88,6 +99,10 @@
                   <span class="hero-stat-label" data-en="Years Experience" data-de="Jahre Erfahrung">Years Experience</span>
                </div>
             </div>
+            <p class="hero-availability">
+               <span class="availability-dot" aria-hidden="true"></span>
+               <span data-en="Open to new project inquiries" data-de="Offen für neue Projektanfragen">Open to new project inquiries</span>
+            </p>
             <div class="hero-cta">
                <a href="mailto:hi@philip-frerk.de?subject=Project%20Inquiry" class="btn btn-primary contact-mailto" data-mailto-subject-en="Project Inquiry" data-mailto-subject-de="Projektanfrage" data-en="Send Project Inquiry" data-de="Projektanfrage senden">Send Project Inquiry</a>
                <a href="assets/Profil_Philip_Frerk.pdf" target="_blank" class="btn btn-secondary" data-en="Download Profile" data-de="Profil herunterladen">Download Profile</a>
@@ -137,13 +152,49 @@
       </div>
    </section>
 
-   <!-- Projects Section -->
-   <section id="resume" class="section section-alt">
+   <!-- Services Section -->
+   <section id="services" class="section section-alt">
       <div class="container">
-        
-         
+         <h2 class="section-title centered" data-en="Services" data-de="Leistungen">Services</h2>
+         <p class="section-subtitle centered" data-en="What I help clients with — from architecture to production." data-de="Wobei ich Kunden unterstütze — von der Architektur bis zur Produktion.">
+            What I help clients with — from architecture to production.
+         </p>
+         <div class="services-grid">
+            <div class="service-card">
+               <div class="service-icon"><i class="fa fa-code" aria-hidden="true"></i></div>
+               <h3 data-en="Backend Development" data-de="Backend-Entwicklung">Backend Development</h3>
+               <p data-en="Robust .NET/C# backends, APIs, and data layers — clean, maintainable, and built to scale." data-de="Robuste .NET/C#-Backends, APIs und Datenschichten — sauber, wartbar und skalierbar.">
+                  Robust .NET/C# backends, APIs, and data layers — clean, maintainable, and built to scale.
+               </p>
+            </div>
+            <div class="service-card">
+               <div class="service-icon"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+               <h3 data-en="Cloud &amp; DevOps" data-de="Cloud &amp; DevOps">Cloud &amp; DevOps</h3>
+               <p data-en="CI/CD pipelines, containerization, and Kubernetes deployments — reliable delivery from commit to production." data-de="CI/CD-Pipelines, Containerisierung und Kubernetes-Deployments — zuverlässige Auslieferung vom Commit bis zur Produktion.">
+                  CI/CD pipelines, containerization, and Kubernetes deployments — reliable delivery from commit to production.
+               </p>
+            </div>
+            <div class="service-card">
+               <div class="service-icon"><i class="fa fa-sitemap" aria-hidden="true"></i></div>
+               <h3 data-en="Software Architecture" data-de="Softwarearchitektur">Software Architecture</h3>
+               <p data-en="Domain-driven design and distributed systems — solid foundations for complex business domains." data-de="Domain-Driven Design und verteilte Systeme — solide Grundlagen für komplexe Fachdomänen.">
+                  Domain-driven design and distributed systems — solid foundations for complex business domains.
+               </p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Projects Section -->
+   <section id="projects" class="section">
+      <div class="container">
+         <h2 class="section-title centered" data-en="Projects" data-de="Projekte">Projects</h2>
+         <p class="section-subtitle centered" data-en="Selected client projects from financial software, energy, and beyond." data-de="Ausgewählte Kundenprojekte aus Finanzsoftware, Energiewirtschaft und darüber hinaus.">
+            Selected client projects from financial software, energy, and beyond.
+         </p>
+
          <div class="resume-block">
-            <h3 class="block-title" data-en="Client Projects" data-de="Projekte">Client Projects</h3>
+            <h3 class="block-title" data-en="Client Projects" data-de="Kundenprojekte">Client Projects</h3>
          
             <div class="timeline-item">
                <div class="timeline-marker"></div>
@@ -392,68 +443,14 @@
    <div id="cookie-banner" class="cookie-banner">
       <div class="cookie-content">
          <div class="cookie-text">
-            <h4 data-en="Cookie Notice" data-de="Cookie-Hinweis">Cookie Notice</h4>
-            <p data-en="We use cookies to enhance your browsing experience and analyze our traffic. By clicking 'Accept All', you consent to our use of cookies. You can also customize your preferences or learn more in our" data-de="Wir verwenden Cookies, um Ihr Browsing-Erlebnis zu verbessern und unseren Traffic zu analysieren. Durch Klicken auf 'Alle akzeptieren' stimmen Sie der Verwendung von Cookies zu. Sie können auch Ihre Einstellungen anpassen oder mehr in unserer">
-               We use cookies to enhance your browsing experience and analyze our traffic. By clicking 'Accept All', you consent to our use of cookies. You can also customize your preferences or learn more in our
+            <h4 data-en="Privacy Notice" data-de="Datenschutz-Hinweis">Privacy Notice</h4>
+            <p data-en="This site stores your language, theme, and consent preferences locally in your browser. We do not use analytics or advertising trackers. Learn more in our" data-de="Diese Website speichert Ihre Sprache, Ihr Theme und Ihre Einwilligung lokal im Browser. Wir verwenden keine Analyse- oder Werbe-Tracker. Mehr in unserer">
+               This site stores your language, theme, and consent preferences locally in your browser. We do not use analytics or advertising trackers. Learn more in our
             </p>
-            <a href="data-privacy-ugcworks-en.html" class="cookie-link" data-en="Privacy Policy" data-de="Datenschutzerklärung">Privacy Policy</a>.
+            <a href="privacy.html" class="cookie-link" data-en="Privacy Policy" data-de="Datenschutzerklärung">Privacy Policy</a>.
          </div>
          <div class="cookie-buttons">
-            <button id="cookie-accept-all" class="cookie-btn cookie-btn-primary" data-en="Accept All" data-de="Alle akzeptieren">Accept All</button>
-            <button id="cookie-settings" class="cookie-btn cookie-btn-secondary" data-en="Settings" data-de="Einstellungen">Settings</button>
-            <button id="cookie-reject" class="cookie-btn cookie-btn-secondary" data-en="Reject All" data-de="Alle ablehnen">Reject All</button>
-         </div>
-      </div>
-   </div>
-
-   <!-- Cookie Settings Modal -->
-   <div id="cookie-settings-modal" class="cookie-modal">
-      <div class="cookie-modal-content">
-         <div class="cookie-modal-header">
-            <h3 data-en="Cookie Settings" data-de="Cookie-Einstellungen">Cookie Settings</h3>
-            <button id="cookie-modal-close" class="cookie-modal-close">&times;</button>
-         </div>
-         <div class="cookie-modal-body">
-            <div class="cookie-category">
-               <div class="cookie-category-header">
-                  <h4 data-en="Essential Cookies" data-de="Notwendige Cookies">Essential Cookies</h4>
-                  <label class="cookie-toggle">
-                     <input type="checkbox" id="essential-cookies" checked disabled>
-                     <span class="cookie-slider"></span>
-                  </label>
-               </div>
-               <p data-en="These cookies are necessary for the website to function and cannot be switched off. They are usually only set in response to actions made by you which amount to a request for services." data-de="Diese Cookies sind für die Funktionsweise der Website erforderlich und können nicht deaktiviert werden. Sie werden normalerweise nur als Reaktion auf von Ihnen vorgenommene Aktionen gesetzt.">
-                  These cookies are necessary for the website to function and cannot be switched off. They are usually only set in response to actions made by you which amount to a request for services.
-               </p>
-            </div>
-            <div class="cookie-category">
-               <div class="cookie-category-header">
-                  <h4 data-en="Analytics Cookies" data-de="Analyse-Cookies">Analytics Cookies</h4>
-                  <label class="cookie-toggle">
-                     <input type="checkbox" id="analytics-cookies">
-                     <span class="cookie-slider"></span>
-                  </label>
-               </div>
-               <p data-en="These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously." data-de="Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren, indem sie Informationen anonym sammeln und berichten.">
-                  These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.
-               </p>
-            </div>
-            <div class="cookie-category">
-               <div class="cookie-category-header">
-                  <h4 data-en="Functional Cookies" data-de="Funktionale Cookies">Functional Cookies</h4>
-                  <label class="cookie-toggle">
-                     <input type="checkbox" id="functional-cookies">
-                     <span class="cookie-slider"></span>
-                  </label>
-               </div>
-               <p data-en="These cookies enable enhanced functionality and personalization, such as language preferences and user interface customization." data-de="Diese Cookies ermöglichen erweiterte Funktionalität und Personalisierung, wie Spracheinstellungen und Anpassung der Benutzeroberfläche.">
-                  These cookies enable enhanced functionality and personalization, such as language preferences and user interface customization.
-               </p>
-            </div>
-         </div>
-         <div class="cookie-modal-footer">
-            <button id="cookie-save-settings" class="cookie-btn cookie-btn-primary" data-en="Save Settings" data-de="Einstellungen speichern">Save Settings</button>
-            <button id="cookie-accept-all-modal" class="cookie-btn cookie-btn-secondary" data-en="Accept All" data-de="Alle akzeptieren">Accept All</button>
+            <button id="cookie-accept" class="cookie-btn cookie-btn-primary" data-en="Got it" data-de="Verstanden">Got it</button>
          </div>
       </div>
    </div>
@@ -475,6 +472,8 @@
             </div>
             <div class="footer-links">
                <a href="impress.html" data-en="Legal Notice" data-de="Impressum">Legal Notice</a>
+               <span class="separator">|</span>
+               <a href="privacy.html" data-en="Privacy Policy" data-de="Datenschutzerklärung">Privacy Policy</a>
                <span class="separator">|</span>
                <span>&copy; 2026 Philip Frerk</span>
             </div>

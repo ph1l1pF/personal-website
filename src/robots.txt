@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /inc/
+Disallow: /demo.html
+Disallow: /ugcworks.html
+Disallow: /data-privacy-
+
+Sitemap: https://philip-frerk.de/sitemap.xml
