@@ -30,27 +30,29 @@
    <nav id="navbar">
       <div class="nav-container">
          <a href="#home" class="logo">PF</a>
-         <button class="mobile-menu-btn" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-         </button>
          <ul class="nav-menu">
             <li><a href="#home" class="nav-link" data-en="Home" data-de="Startseite">Home</a></li>
             <li><a href="#about" class="nav-link" data-en="About" data-de="Über mich">About</a></li>
             <li><a href="#resume" class="nav-link" data-en="Projects" data-de="Projekte">Projects</a></li>
             <li><a href="#contact" class="nav-link" data-en="Contact" data-de="Kontakt">Contact</a></li>
-            <li class="theme-switcher">
-               <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
-                  <i class="fa fa-moon-o" aria-hidden="true"></i>
-               </button>
-            </li>
             <li class="lang-switcher">
                <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
                <span class="lang-separator">|</span>
                <button class="lang-btn" data-lang="de" aria-label="Switch to German">DE</button>
             </li>
          </ul>
+         <div class="nav-controls">
+            <div class="theme-switcher">
+               <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+                  <i class="fa fa-moon-o" aria-hidden="true"></i>
+               </button>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+               <span></span>
+               <span></span>
+               <span></span>
+            </button>
+         </div>
       </div>
    </nav>
 
@@ -124,7 +126,6 @@
    <!-- Projects Section -->
    <section id="resume" class="section section-alt">
       <div class="container">
-         <h2 class="section-title centered" data-en="Projects & Education" data-de="Projekte & Ausbildung">Projects & Education</h2>
         
          
          <div class="resume-block">

@@ -195,6 +195,14 @@ a:hover {
    display: flex;
    justify-content: space-between;
    align-items: center;
+   gap: 1rem;
+}
+
+.nav-controls {
+   display: flex;
+   align-items: center;
+   gap: 0.75rem;
+   flex-shrink: 0;
 }
 
 .logo {
@@ -1023,13 +1031,6 @@ a:hover {
       margin-left: 0;
       padding-left: 0;
       border-left: none;
-      border-top: 1px solid var(--border-color);
-      padding-top: 1rem;
-      margin-top: 1rem;
-      justify-content: center;
-   }
-
-   .theme-switcher {
       border-top: 1px solid var(--border-color);
       padding-top: 1rem;
       margin-top: 1rem;
