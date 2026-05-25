@@ -281,6 +281,11 @@
          }
       });
 
+      document.querySelectorAll('[data-years-suffix]').forEach(element => {
+         const suffix = element.getAttribute('data-years-suffix') || '';
+         element.textContent = years + suffix;
+      });
+
       document.querySelectorAll('[data-lang-block]').forEach(block => {
          block.hidden = block.getAttribute('data-lang-block') !== lang;
       });
