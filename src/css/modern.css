@@ -520,13 +520,31 @@ a:hover {
    transform: translateY(-3px);
 }
 
-.social-links a img {
+.social-links a img,
+.freelancermap-badge {
    filter: brightness(0) invert(1);
    transition: var(--transition);
 }
 
-.social-links a:hover img {
+.social-links a:hover img,
+.footer .social-links a:hover .freelancermap-badge {
    filter: none;
+}
+
+.footer .freelancermap-badge {
+   filter: brightness(0) invert(1);
+   opacity: 0.92;
+}
+
+.about-text .email a,
+.contact-card a.contact-mailto {
+   color: var(--primary-color);
+   font-weight: 500;
+}
+
+.about-text .email a:hover,
+.contact-card a.contact-mailto:hover {
+   color: var(--primary-dark);
 }
 
 .scroll-indicator {

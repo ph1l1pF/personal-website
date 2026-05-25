@@ -300,6 +300,7 @@
    const langButtons = document.querySelectorAll('.lang-btn');
    let currentLang = 'en';
    const CAREER_START_YEAR = 2019;
+   const CONTACT_EMAIL = 'hi@philip-frerk.de';
 
    function getYearsOfExperience() {
       return new Date().getFullYear() - CAREER_START_YEAR;
@@ -359,6 +360,14 @@
       }
 
       updateThemeToggle(getStoredTheme());
+      updateMailtoLinks(lang);
+   }
+
+   function updateMailtoLinks(lang) {
+      document.querySelectorAll('[data-mailto-subject-en][data-mailto-subject-de]').forEach(element => {
+         const subject = element.getAttribute(`data-mailto-subject-${lang}`) || '';
+         element.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}`;
+      });
    }
 
    // Update active language button
