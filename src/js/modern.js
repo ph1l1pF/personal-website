@@ -236,6 +236,66 @@
       });
    }
 
+   // Theme Toggle
+   const themeToggle = document.getElementById('theme-toggle');
+
+   function getStoredTheme() {
+      try {
+         return localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+      } catch (e) {
+         return 'light';
+      }
+   }
+
+   function setStoredTheme(theme) {
+      try {
+         localStorage.setItem('theme', theme);
+      } catch (e) {
+         console.warn('Could not save theme preference');
+      }
+   }
+
+   function updateThemeToggle(theme) {
+      if (!themeToggle) return;
+
+      const icon = themeToggle.querySelector('i');
+      const isDark = theme === 'dark';
+
+      if (icon) {
+         icon.className = 'fa fa-moon-o';
+      }
+
+      themeToggle.setAttribute('aria-pressed', isDark);
+      const lang = document.documentElement.lang || 'en';
+      themeToggle.setAttribute(
+         'aria-label',
+         lang === 'de'
+            ? (isDark ? 'Hellmodus aktivieren' : 'Dunkelmodus aktivieren')
+            : (isDark ? 'Switch to light mode' : 'Switch to dark mode')
+      );
+   }
+
+   function setTheme(theme) {
+      if (theme === 'dark') {
+         document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+         document.documentElement.removeAttribute('data-theme');
+      }
+      setStoredTheme(theme);
+      updateThemeToggle(theme);
+   }
+
+   function initTheme() {
+      setTheme(getStoredTheme());
+   }
+
+   if (themeToggle) {
+      themeToggle.addEventListener('click', function() {
+         const nextTheme = getStoredTheme() === 'dark' ? 'light' : 'dark';
+         setTheme(nextTheme);
+      });
+   }
+
    // Language Switcher (Safari compatible)
    const langButtons = document.querySelectorAll('.lang-btn');
    let currentLang = 'en';
@@ -273,7 +333,7 @@
    // Update all translatable content
    function updateLanguage(lang) {
       const years = getYearsOfExperience();
-      const elements = document.querySelectorAll('[data-en][data-de]');
+      const elements = document.querySelectorAll('[data-en][data-de]:not(.theme-toggle)');
       elements.forEach(element => {
          const text = element.getAttribute(`data-${lang}`);
          if (text) {
@@ -297,6 +357,8 @@
             pageTitle.textContent = title;
          }
       }
+
+      updateThemeToggle(getStoredTheme());
    }
 
    // Update active language button
@@ -324,8 +386,12 @@
 
    // Initialize language on page load
    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initLanguage);
+      document.addEventListener('DOMContentLoaded', function() {
+         initTheme();
+         initLanguage();
+      });
    } else {
+      initTheme();
       initLanguage();
    }
 

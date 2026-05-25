@@ -7,6 +7,16 @@
    <meta name="author" content="Philip Frerk">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 
+   <script>
+      (function() {
+         try {
+            if (localStorage.getItem('theme') === 'dark') {
+               document.documentElement.setAttribute('data-theme', 'dark');
+            }
+         } catch (e) {}
+      })();
+   </script>
+
    <!-- CSS -->
    <link rel="stylesheet" href="css/modern.css">
    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
@@ -30,6 +40,11 @@
             <li><a href="#about" class="nav-link" data-en="About" data-de="Über mich">About</a></li>
             <li><a href="#resume" class="nav-link" data-en="Experience" data-de="Erfahrung">Experience</a></li>
             <li><a href="#contact" class="nav-link" data-en="Contact" data-de="Kontakt">Contact</a></li>
+            <li class="theme-switcher">
+               <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+                  <i class="fa fa-moon-o" aria-hidden="true"></i>
+               </button>
+            </li>
             <li class="lang-switcher">
                <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
                <span class="lang-separator">|</span>

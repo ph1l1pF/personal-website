@@ -4,17 +4,33 @@
    <meta charset="utf-8">
    <title data-en="Legal Notice – Philip Frerk" data-de="Impressum – Philip Frerk">Legal Notice – Philip Frerk</title>
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+   <script>
+      (function() {
+         try {
+            if (localStorage.getItem('theme') === 'dark') {
+               document.documentElement.setAttribute('data-theme', 'dark');
+            }
+         } catch (e) {}
+      })();
+   </script>
+
    <link rel="stylesheet" href="css/modern.css">
+   <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
    <link rel="shortcut icon" href="favicon.png">
 </head>
 <body>
    <header class="legal-header">
       <div class="container legal-header-inner">
          <a href="index.html" class="legal-back" data-en="← Back to home" data-de="← Zurück zur Startseite">← Back to home</a>
-         <div class="lang-switcher">
+         <div class="legal-header-actions">
+            <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+               <i class="fa fa-moon-o" aria-hidden="true"></i>
+            </button>
+            <div class="lang-switcher">
             <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
             <span class="lang-separator">|</span>
             <button class="lang-btn" data-lang="de" aria-label="Switch to German">DE</button>
+            </div>
          </div>
       </div>
    </header>

@@ -16,12 +16,42 @@
    --bg-gray: #f8fafc;
    --bg-dark: #0f172a;
    --border-color: #e2e8f0;
+   --surface: #ffffff;
+   --surface-accent: #f1f5f9;
+   --navbar-bg: rgba(255, 255, 255, 0.95);
+   --hero-gradient-start: #667eea;
+   --hero-gradient-end: #764ba2;
    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
    --border-radius: 12px;
+}
+
+[data-theme="dark"] {
+   color-scheme: dark;
+   --primary-color: #3b82f6;
+   --primary-dark: #2563eb;
+   --primary-light: #60a5fa;
+   --secondary-color: #38bdf8;
+   --accent-color: #a78bfa;
+   --text-dark: #f1f5f9;
+   --text-medium: #cbd5e1;
+   --text-light: #94a3b8;
+   --bg-white: #0f172a;
+   --bg-gray: #1e293b;
+   --bg-dark: #020617;
+   --border-color: #334155;
+   --surface: #1e293b;
+   --surface-accent: #334155;
+   --navbar-bg: rgba(15, 23, 42, 0.95);
+   --hero-gradient-start: #312e81;
+   --hero-gradient-end: #1e1b4b;
+   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.45);
+   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.55);
 }
 
 /* Reset & Base Styles */
@@ -145,7 +175,7 @@ a:hover {
    left: 0;
    right: 0;
    z-index: 1000;
-   background: rgba(255, 255, 255, 0.95);
+   background: var(--navbar-bg);
    backdrop-filter: blur(10px);
    -webkit-backdrop-filter: blur(10px); /* Safari support */
    box-shadow: var(--shadow-sm);
@@ -244,6 +274,39 @@ a:hover {
    font-weight: 300;
 }
 
+/* Theme Toggle */
+.theme-switcher {
+   display: flex;
+   align-items: center;
+}
+
+.theme-toggle {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 2.25rem;
+   height: 2.25rem;
+   background: none;
+   border: 1px solid var(--border-color);
+   border-radius: 8px;
+   color: var(--text-medium);
+   font-size: 1rem;
+   cursor: pointer;
+   transition: var(--transition);
+}
+
+.theme-toggle:hover {
+   color: var(--primary-color);
+   border-color: var(--primary-color);
+   background: rgba(37, 99, 235, 0.1);
+}
+
+.theme-toggle[aria-pressed="true"] {
+   color: var(--primary-light);
+   border-color: var(--primary-color);
+   background: rgba(37, 99, 235, 0.15);
+}
+
 .mobile-menu-btn {
    display: none;
    flex-direction: column;
@@ -269,7 +332,7 @@ a:hover {
    align-items: center;
    justify-content: center;
    position: relative;
-   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+   background: linear-gradient(135deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
    color: white;
    padding: 8rem 2rem 4rem;
 }
@@ -531,7 +594,7 @@ a:hover {
 .about-text {
    flex: 1;
    padding: 2rem;
-   background: white;
+   background: var(--surface);
    border-radius: var(--border-radius);
    box-shadow: var(--shadow-md);
    min-width: 0;
@@ -554,7 +617,7 @@ a:hover {
 .contact-info {
    margin-top: 2rem;
    padding: 1.5rem;
-   background: linear-gradient(135deg, var(--bg-gray), #f1f5f9);
+   background: linear-gradient(135deg, var(--bg-gray), var(--surface-accent));
    border-radius: var(--border-radius);
    border-left: 4px solid var(--primary-color);
    box-shadow: var(--shadow-sm);
@@ -605,14 +668,14 @@ a:hover {
    width: 16px;
    height: 16px;
    border-radius: 50%;
-   background: white;
+   background: var(--surface);
    border: 3px solid var(--primary-color);
    box-shadow: 0 0 0 4px var(--bg-gray);
 }
 
 .timeline-content {
    position: relative;
-   background: white;
+   background: var(--surface);
    padding: 2rem;
    border-radius: var(--border-radius);
    box-shadow: var(--shadow-md);
@@ -738,7 +801,7 @@ a:hover {
 }
 
 .contact-card {
-   background: white;
+   background: var(--surface);
    padding: 2.5rem 2rem;
    border-radius: var(--border-radius);
    text-align: center;
@@ -918,7 +981,7 @@ a:hover {
       left: -100%;
       width: 100%;
       height: calc(100vh - 70px);
-      background: white;
+      background: var(--surface);
       flex-direction: column;
       padding: 2rem;
       transition: left 0.3s ease;
@@ -937,6 +1000,13 @@ a:hover {
       margin-left: 0;
       padding-left: 0;
       border-left: none;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1rem;
+      margin-top: 1rem;
+      justify-content: center;
+   }
+
+   .theme-switcher {
       border-top: 1px solid var(--border-color);
       padding-top: 1rem;
       margin-top: 1rem;
@@ -1003,7 +1073,7 @@ a:hover {
    .contact-info {
       margin-top: 2rem;
       padding: 1.5rem;
-      background: linear-gradient(135deg, var(--bg-gray), #f1f5f9);
+      background: linear-gradient(135deg, var(--bg-gray), var(--surface-accent));
       border-radius: var(--border-radius);
       border-left: 4px solid var(--primary-color);
       box-shadow: var(--shadow-sm);
@@ -1304,7 +1374,7 @@ a:hover {
    width: 18px;
    left: 3px;
    bottom: 3px;
-   background-color: white;
+   background-color: var(--surface);
    transition: var(--transition);
    border-radius: 50%;
    box-shadow: var(--shadow-sm);
@@ -1406,7 +1476,7 @@ a:hover {
    position: sticky;
    top: 0;
    z-index: 100;
-   background: rgba(255, 255, 255, 0.95);
+   background: var(--navbar-bg);
    backdrop-filter: blur(10px);
    border-bottom: 1px solid var(--border-color);
 }
@@ -1417,6 +1487,18 @@ a:hover {
    justify-content: space-between;
    padding: 1rem 1.5rem;
    gap: 1rem;
+}
+
+.legal-header-actions {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+.legal-header .lang-switcher {
+   margin-left: 0;
+   padding-left: 0;
+   border-left: none;
 }
 
 .legal-back {
@@ -1449,12 +1531,6 @@ a:hover {
 
 .legal-page .impressum p {
    margin-bottom: 1.25rem;
-}
-
-.legal-header .lang-switcher {
-   margin-left: 0;
-   padding-left: 0;
-   border-left: none;
 }
 
 /* Print Styles */
